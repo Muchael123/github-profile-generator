@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { MdContext } from '../context/MdContext';
 
-function Editor({ handleChanges }) {
+function Editor() {
+  const { handleChange } = useContext(MdContext);
 
   return (
     <div className="flex-1">
@@ -10,8 +12,8 @@ function Editor({ handleChanges }) {
         </label>
         <input
           type="text"
-          name="name"
-          onChange={handleChanges}
+          name="name" 
+          onChange={handleChange}
           className="outline-none bg-transparent border border-blue-500 rounded-[8px] p-2 text-green-400 font-semibold"
         />
       </form>
@@ -19,4 +21,4 @@ function Editor({ handleChanges }) {
   );
 }
 
-export default Editor
+export default Editor;
